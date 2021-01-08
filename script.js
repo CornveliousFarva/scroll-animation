@@ -1,4 +1,4 @@
-const boxes = document.querySelector('.box')
+const boxes = document.querySelectorAll('.box')
 
 window.addEventListener('scroll', checkBoxes)
 
@@ -8,7 +8,7 @@ function checkBoxes() {
     const triggerBottom = window.innerHeight / 5 * 4
 
     boxes.forEach(box => {
-        const boxTop = box.getBoundingClientRect().boxTop
+        const boxTop = box.getBoundingClientRect().top
 
         if(boxTop < triggerBottom) {
             box.classList.add('show')
@@ -17,3 +17,23 @@ function checkBoxes() {
         }
     })
 }
+
+// const boxes = document.querySelectorAll('.box')
+
+// window.addEventListener('scroll', checkBoxes)
+
+// checkBoxes()
+
+// function checkBoxes() {
+//     const triggerBottom = window.innerHeight / 5 * 4
+
+//     boxes.forEach(box => {
+//         const boxTop = box.getBoundingClientRect().top
+
+//         if(boxTop < triggerBottom) {
+//             box.classList.add('show')
+//         } else {
+//             box.classList.remove('show')
+//         }
+//     })
+// }
